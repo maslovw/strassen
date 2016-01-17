@@ -12,7 +12,7 @@ uint32_t nextPowerOfTwo(int n)
 	return (uint32_t)pow(2, int(ceil(log2(n))));
 }
 
-int leafsize = 1;
+int leafsize = 32;
 
 
 
@@ -186,20 +186,21 @@ bool Strassen(const TMatrix& A, const TMatrix& B, TMatrix& C)
 		for (unsigned int j = 0; j<n; j++)
 			C[i][j] = CPrep[i][j];
 
-	print(CPrep);
 	return true;
 }
 
 
-void StrassenTest()
+void StrassenTest(const char * apName)
 {
-	TArray<TVal> tInit(M, 0);
-	TMatrix tA(M, tInit);
-	TMatrix tB(M, tInit);
+	TMatrix tA;
+	TMatrix tB;
 	TMatrix tC;
 
-	Init(tA, a[0], M);
-	Init(tB, b[0], M);
+	Init("a.bin", tA);
+	Init("b.bin", tB);
+	auto t1 = TimeStart();
 	Strassen(tA, tB, tC);
-	print(tC);
+	TimeStop(t1);
+	//print(tC);
+	Save(apName, tC);
 }

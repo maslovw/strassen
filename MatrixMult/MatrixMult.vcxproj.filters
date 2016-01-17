@@ -36,11 +36,14 @@
     <ClInclude Include="Strassen.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="StrassenC.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MyStrassen.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="stdafx.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="MatrixMult.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -48,6 +51,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Strassen.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="StrassenC.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MyStrassen.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

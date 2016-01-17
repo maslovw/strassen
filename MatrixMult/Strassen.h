@@ -1,2 +1,2 @@
 #pragma once
-void StrassenTest();
+void StrassenTest(const char*);

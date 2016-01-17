@@ -45,21 +45,25 @@ bool Scalar(const TMatrix& A, const TMatrix& B, TMatrix& C)
 
 	for (size_t i = 0; i < m; ++i)
 		for (size_t j = 0; j < m; ++j)
-			for (int k = 0; k< m; k++)
+			for (size_t k = 0; k< m; k++)
 				C[i][j] += A[i][k] * B[k][j];
 	return true;
 }
 
 
-void ScalarTest()
+void ScalarTest(const char* apName)
 {
-	TArray<TVal> tInit(M, 0);
-	TMatrix tA(M, tInit);
-	TMatrix tB(M, tInit);
+	TMatrix tA;
+	TMatrix tB;
 	TMatrix tC;
 
-	Init(tA, a[0], M);
-	Init(tB, b[0], M);
+	Init("a.bin", tA);
+	Init("b.bin", tB);
+
+	auto t1 = TimeStart();
 	Scalar(tA, tB, tC);
-	print(tC);
+	TimeStop(t1);
+
+	//print(tC);
+	Save(apName, tC);
 }
